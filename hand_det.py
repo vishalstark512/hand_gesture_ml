@@ -78,8 +78,8 @@ for layer in base_model.layers:
 ############
 
 x = base_model.output
-x = Dense(128)(x)
 x = GlobalAveragePooling2D()(x)
+x = Dense(128)(x)
 x = Dropout(0.2)(x)
 predictions = Dense(num_class, activation='softmax')(x)
 
